@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "contact": "İletişim",
+    "about": "Hakkımızda",
+    "home": "Anasayfa"
+  },
+  "common": {
+    "explorer_city": "Şehri Keşfet",
+    "explorer": "Keşfet",
+    "popular": "Popüler",
+    "mode_label": "Mod",
+    "welcome": "Vyve City'e Hoş Geldiniz",
+    "copyright": "Tüm Hakları Saklıdır",
+    "faq": "SSS",
+    "privacy_policy": "Gizlilik Politikası",
+    "help": "Yardım",
+    "services": "Hizmetler",
+    "stay_in_touch": "İletişimde Kalın",
+    "subscribe_text": "E-posta bültenimize abone olun ve en son haberlerimizden haberdar olun.",
+    "subscribe_now": "Şimdi Abone Ol",
+    "enter_your_email": "E-postanızı girin",
+    "explorer_description": "Çevrendeki kafeleri ve anlık doluluk durumlarını kolayca keşfet.",
+    "popular_description": "En çok sevilen ve en yoğun ziyaret edilen mekanlara göz at.",
+    "mode_description": "Bulunduğun bölgenin temposuna göre sana en uygun modu yakala."
+  },
+  "not_found": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Üzgünüz, aradığınız sayfa bulunamadı.",
+    "back_home": "Anasayfaya Dön"
+  },
+  "contact": {
+    "title": "Yardıma mı ihtiyacınız var? İletişime geçin 👋",
+    "first_name": "Ad",
+    "last_name": "Soyad",
+    "email_address": "E-posta adresi",
+    "message": "Mesaj",
+    "send_message": "Mesaj Gönder",
+    "type_your_message": "Mesajınızı yazın"
+  },
+  "hero": {
+    "title": "Vyve ile çevrenizdeki yerleri keşfetmeye başlayın"
+  }
+}

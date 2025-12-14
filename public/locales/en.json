@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "contact": "Contact",
+    "about": "Abous Us",
+    "home": "Home"
+  },
+  "common": {
+    "explorer_city": "Explorer The City",
+    "explorer": "Explorer",
+    "popular": "Popular",
+    "mode_label": "Mood",
+    "welcome": "Welcome to Vyve City",
+    "copyright": "All Rights Reserved",
+    "faq": "FAQ",
+    "privacy_policy": "Privacy Policy",
+    "help": "Help",
+    "services": "Services",
+    "stay_in_touch": "Stay in Touch",
+    "subscribe_text": "Subscribe to our email newsletter to stay updated with our latest news",
+    "subscribe_now": "Subscribe Now",
+    "enter_your_email": "Enter your email",
+    "explorer_description": "Explore nearby cafés and see how busy they are in real time.",
+    "popular_description": "Check out the most liked and most visited places around you.",
+    "mode_description": "Find the right vibe based on how busy your area is right now."
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for could not be found.",
+    "back_home": "Back to Home"
+  },
+  "contact": {
+    "title": "Need any Help? Get in touch 👋",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email_address": "Email address",
+    "message": "Message",
+    "send_message": "Send Message",
+    "type_your_message": "Type your message"
+  },
+  "hero": {
+    "title": "Start exploring the places around you with Vyve"
+  }
+}

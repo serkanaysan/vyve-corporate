@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+@theme inline {
+  /* =========================
+     PRIMARY (Brand: #9849D0)
+     ========================= */
+  --color-primary-50: #f6effc;
+  --color-primary-100: #ead9f7;
+  --color-primary-200: #d4b3ee;
+  --color-primary-300: #bc8be3;
+  --color-primary-400: #a666d8;
+  --color-primary-500: #9849d0;
+  --color-primary-600: #853ec0;
+  --color-primary-700: #7033a6;
+  --color-primary-800: #5a2a88;
+
+  /* Success */
+  --color-success-50: #ecfdf3;
+  --color-success-500: #12b76a;
+  --color-success-600: #039855;
+
+  /* Error */
+  --color-error-50: #fef3f2;
+  --color-error-100: #fee4e2;
+  --color-error-500: #f04438;
+  --color-error-600: #d92d20;
+
+  /* Dark theme */
+  --color-dark-primary: #171f2e;
+  --color-dark-secondary: #1a2231;
+
+  /* Typography */
+  --text-title-lg: 44px;
+  --text-title-lg--line-height: 52px;
+
+  /* Shadows */
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-theme-sm: 0px 8px 20px 0px rgba(0, 0, 0, 0.08);
+  --shadow-theme-md: 0px 8px 30px 0px rgba(12, 11, 25, 0.04);
+  --shadow-theme-lg:
+    0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-ring: 0px 0px 0px 4px rgba(152, 73, 208, 0.25);
+
+  /* Background Gradients */
+  --background-image-gradient-1: linear-gradient(
+    180deg,
+    #faf7ff 0%,
+    #f0e9ff 50%,
+    #e6d8ff 100%
+  );
+
+  --background-image-gradient-2: linear-gradient(
+    97deg,
+    #9849d0 0%,
+    #c9a6ec 140.21%
+  );
+}
+
+/* =========================
+   BUTTON & UI GRADIENTS
+   ========================= */
+.button-bg,
+.gradient-btn,
+.gradient-bg-two {
+  background-image: linear-gradient(97deg, #9849d0 0%, #c9a6ec 140.21%);
+}
+
+.gradient-btn {
+  color: white;
+  background-size: 200% auto;
+  background-position: 0% center;
+  transition:
+    background-position 0.6s ease-in-out,
+    transform 0.3s ease;
+}
+
+.gradient-btn:hover {
+  background-image: linear-gradient(97deg, #c9a6ec 0%, #9849d0 140.21%);
+  background-position: 100% center;
+}
+
+/* =========================
+   TAB & OVERLAYS
+   ========================= */
+.tab-img-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(152, 73, 208, 0.2) 0%,
+    rgba(124, 86, 220, 0.2) 100%
+  );
+  position: relative;
+  z-index: 20;
+}
+
+[data-theme="light"] .tab-img-bg::after {
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 93.51%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+[data-theme="dark"] .tab-img-bg::after {
+  background: linear-gradient(180deg, rgba(23, 31, 46, 0) 0%, #171f2e 93.51%);
+}
+
+.tab-img-overlay {
+  border-radius: 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 67.58%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(18px);
+  position: relative;
+  z-index: 20;
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+@utility wrapper {
+  @apply container px-5 mx-auto sm:px-7;
+}
+
+.shadow-one {
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.benefits-bg {
+  border-radius: 20px;
+  background: linear-gradient(216deg, #d6b9f2 0%, #9849d0 100%);
+}
+
+@utility hero-glow-bg {
+  background-image: linear-gradient(
+    180deg,
+    rgba(152, 73, 208, 0) 0%,
+    #9849d0 100%
+  );
+}
+
+.core-feature-wrapper {
+  border-radius: 20px;
+  box-shadow: 0px 30px 50px -32px rgba(107, 110, 148, 0.04);
+}
+
+.core-feature-icon {
+  background-image: linear-gradient(
+    180deg,
+    #9849d0 0%,
+    rgba(152, 73, 208, 0) 100%
+  );
+  filter: drop-shadow(0px 23px 33px rgba(152, 73, 208, 0.55));
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.contact-wrapper {
+  border-radius: 24px;
+  box-shadow: 0px 32px 100px -12px rgba(16, 24, 40, 0.05);
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
