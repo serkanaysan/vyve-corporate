@@ -24,9 +24,9 @@ export default function HeroSection() {
                   "We turn the city’s ever\u2011changing rhythm into real\u2011time data."
                 )}
               </h1>
-              <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
+              {/* <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
                 {t("hero.title", "You move. The city reacts.")}
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="max-w-[1000px] mx-auto relative mb-10">
