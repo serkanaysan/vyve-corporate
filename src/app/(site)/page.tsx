@@ -6,12 +6,12 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
+      <FaqAccordion />
       <CoreFeatures />
       {/* <ToolsTab /> */}
       {/* <BenefitsGrid /> */}
       {/* <TestimonialsSection /> */}
       {/* <PricingSection /> */}
-      <FaqAccordion />
     </>
   );
 }

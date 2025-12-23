@@ -27,15 +27,6 @@ export default function HeroSection() {
               <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
                 {t("hero.title", "You move. The city reacts.")}
               </p>
-
-              <div className="mt-9 flex sm:flex-row flex-col gap-3 relative z-30 items-center justify-center">
-                <div
-                  className="bg-primary-500 transition h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-white text-sm"
-                >
-                  {t("hero.button", "Almost time to meet the city")}
-                </div>
-                {/* <IntroVideo /> */}
-              </div>
             </div>
           </div>
           <div className="max-w-[1000px] mx-auto relative mb-10">
@@ -134,6 +125,12 @@ export default function HeroSection() {
                   </filter>
                 </defs>
               </svg>
+            </div>
+            <div className="mt-9 flex sm:flex-row flex-col gap-3 relative z-30 items-center justify-center">
+              <div className="bg-primary-100 transition h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-900 text-sm">
+                {t("hero.button", "Almost time to meet the city")}
+              </div>
+              {/* <IntroVideo /> */}
             </div>
           </div>
         </div>

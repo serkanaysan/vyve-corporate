@@ -41,5 +41,65 @@
     "title": "Sen hareket edersin. Şehir tepki verir.",
     "description": "Şehrin her an değişen ritmini, gerçek zamanlı veriye dönüştürüyoruz.",
     "button": "Şehirle buluşmaya az kaldı"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "description": "Tüm sıkça sorulan soruları yanıtladık. Hâlâ kafanız karıştıysa, bizimle iletişime geçmekten çekinmeyin.",
+    "q1": {
+      "question": "Vyve nedir?",
+      "answer": "Vyve, şehirdeki kafe ve mekânların anlık doluluk ve yoğunluk bilgilerini gerçek zamanlı olarak gösteren bir platformdur. Gitmeden önce bir mekânın ne kadar dolu olduğunu görmeni sağlar."
+    },
+    "q2": {
+      "question": "Vyve hangi bilgileri gösterir?",
+      "answer": "Vyve, mekânların anlık doluluk durumu, yoğunluk seviyesi ve zaman içindeki hareket değişimlerini sade ve anlaşılır şekilde sunar."
+    },
+    "q3": {
+      "question": "Bu veriler nasıl toplanıyor?",
+      "answer": "Veriler, mekânlara yerleştirilen kişi ve hareket ölçüm sistemleri aracılığıyla anonim olarak toplanır ve gerçek zamanlı olarak Vyve’ye aktarılır."
+    },
+    "q4": {
+      "question": "Kamerayla mı izleniyorum?",
+      "answer": "Hayır. Vyve kamera kullanmaz, görüntü kaydetmez ve kişisel veri toplamaz. Sistem yalnızca sayı ve yoğunluk verisi üretir."
+    },
+    "q5": {
+      "question": "Kişisel verilerim güvende mi?",
+      "answer": "Evet. Vyve hiçbir kişisel veri, kimlik bilgisi veya yüz tanıma verisi toplamaz. Tüm veriler anonim ve toplu istatistik şeklindedir."
+    },
+    "q6": {
+      "question": "Veriler ne kadar güncel?",
+      "answer": "Vyve’de görülen bilgiler gerçek zamanlıdır ve saniyeler içinde güncellenir. Böylece mekâna gitmeden önce en güncel durumu görebilirsin."
+    },
+    "q7": {
+      "question": "Her mekân Vyve’de yer alıyor mu?",
+      "answer": "Hayır. Vyve’de yalnızca sistemin kurulu olduğu ve verisi aktif olarak ölçülen mekânlar listelenir. Bu sayede gösterilen bilgiler güvenilirdir."
+    },
+    "q8": {
+      "question": "Bir mekânın doluluk bilgisi neden bazen görünmüyor?",
+      "answer": "Bazı durumlarda mekân geçici olarak kapalı olabilir, veri akışı kısa süreli durabilir veya sistem bakımda olabilir. Bu gibi durumlarda doluluk bilgisi geçici olarak gizlenebilir."
+    },
+    "q9": {
+      "question": "Vyve’yi kullanmak ücretli mi?",
+      "answer": "Kullanıcılar için Vyve’nin temel özellikleri ücretsizdir. İleri seviye özellikler veya özel çözümler ilerleyen dönemlerde sunulabilir."
+    },
+    "q10": {
+      "question": "İşletmeler Vyve’ye nasıl dahil olabilir?",
+      "answer": "İşletmeler, Vyve ile iletişime geçerek ölçüm sistemlerini kurabilir, kendi mekânlarının doluluk verilerini takip edebilir ve kullanıcılarına görünür hale getirebilir."
+    },
+    "q11": {
+      "question": "Vyve işletmelere ne fayda sağlar?",
+      "answer": "Vyve, işletmelere anlık yoğunluk takibi, gün ve saat bazlı hareket analizi, müşteri davranışı içgörüleri ve daha verimli planlama imkânı sunar."
+    },
+    "q12": {
+      "question": "Vyve hangi şehirlerde kullanılabiliyor?",
+      "answer": "Vyve, aktif olarak sistemin kurulu olduğu şehirlerde hizmet verir. Yeni şehirler ve mekânlar sürekli olarak eklenmektedir."
+    },
+    "q13": {
+      "question": "Yanlış doluluk bilgisi olabilir mi?",
+      "answer": "Sistemler yüksek doğrulukla çalışır; ancak çok ani giriş–çıkışlarda kısa süreli sapmalar olabilir. Veriler sürekli güncellendiği için bu durum hızla dengelenir."
+    },
+    "q14": {
+      "question": "Vyve’yi nasıl kullanmaya başlayabilirim?",
+      "answer": "Mobil uygulamadan Vyve’ye girerek şehrini seçebilir, mekânları görüntüleyebilir ve doluluk durumuna bakarak karar verebilirsin."
+    }
   }
 }

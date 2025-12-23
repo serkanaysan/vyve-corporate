@@ -41,5 +41,65 @@
     "title": "You move. The city reacts.",
     "description": "We turn the city’s ever\u2011changing rhythm into real\u2011time data.",
     "button": "Almost time to meet the city"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Answered all frequently asked questions, Still confused? feel free contact with us",
+    "q1": {
+      "question": "What is Vyve?",
+      "answer": "Vyve is a platform that shows real-time occupancy and crowd information of cafes and venues in the city. It lets you see how busy a place is before you go."
+    },
+    "q2": {
+      "question": "What information does Vyve provide?",
+      "answer": "Vyve provides venues’ real-time occupancy, crowd levels, and movement trends over time in a clear and simple way."
+    },
+    "q3": {
+      "question": "How is this data collected?",
+      "answer": "Data is collected anonymously through people and movement tracking systems installed in venues and transmitted to Vyve in real time."
+    },
+    "q4": {
+      "question": "Am I being watched by a camera?",
+      "answer": "No. Vyve does not use cameras, record video, or collect personal data. The system only generates counts and occupancy data."
+    },
+    "q5": {
+      "question": "Is my personal data safe?",
+      "answer": "Yes. Vyve does not collect any personal information, identity data, or facial recognition data. All data is anonymous and presented as aggregated statistics."
+    },
+    "q6": {
+      "question": "How up-to-date is the data?",
+      "answer": "The information in Vyve is real-time and updates within seconds, so you can see the latest status before visiting a venue."
+    },
+    "q7": {
+      "question": "Are all venues on Vyve?",
+      "answer": "No. Only venues with Vyve systems installed and active data collection appear, ensuring the information is reliable."
+    },
+    "q8": {
+      "question": "Why is a venue's occupancy sometimes not visible?",
+      "answer": "Sometimes a venue may be temporarily closed, data flow may pause briefly, or the system may be under maintenance. In such cases, occupancy data may be temporarily hidden."
+    },
+    "q9": {
+      "question": "Is Vyve free to use?",
+      "answer": "Vyve’s core features are free for users. Advanced features or special solutions may be offered in the future."
+    },
+    "q10": {
+      "question": "How can businesses join Vyve?",
+      "answer": "Businesses can contact Vyve to install tracking systems, monitor their own venue’s occupancy, and make it visible to users."
+    },
+    "q11": {
+      "question": "What benefits does Vyve provide to businesses?",
+      "answer": "Vyve offers businesses real-time occupancy tracking, movement analysis by day and hour, customer behavior insights, and more efficient planning."
+    },
+    "q12": {
+      "question": "In which cities is Vyve available?",
+      "answer": "Vyve operates in cities where the system is installed. New cities and venues are continuously added."
+    },
+    "q13": {
+      "question": "Can occupancy data be incorrect?",
+      "answer": "The systems are highly accurate; however, sudden entries or exits may cause short-term deviations. Since data is continuously updated, this is quickly corrected."
+    },
+    "q14": {
+      "question": "How can I start using Vyve?",
+      "answer": "You can start using Vyve via the mobile app by selecting your city, viewing venues, and checking occupancy before making a decision."
+    }
   }
 }
