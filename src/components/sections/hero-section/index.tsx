@@ -31,7 +31,7 @@ export default function HeroSection() {
 
               <div className="mt-9 flex sm:flex-row flex-col gap-3 relative z-30 items-center justify-center">
                 <Link
-                  href="/text-generator"
+                  href="#"
                   className="bg-primary-500 transition h-12 inline-flex items-center justify-center hover:bg-primary-600 px-6 py-3 rounded-full text-white text-sm"
                 >
                   Explore app

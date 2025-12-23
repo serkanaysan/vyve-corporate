@@ -127,19 +127,19 @@ export default function Footer() {
                   </span>
                   <nav className="flex flex-col space-y-3">
                     <Link
-                      href="/pricing#faq"
+                      href="#"
                       className="text-sm font-normal text-gray-600 dark:text-gray-400 transition hover:text-gray-800 dark:hover:text-white"
                     >
                       {t("common.faq", "FAQ")}
                     </Link>
                     <Link
-                      href="/contact"
+                      href="/iletisim"
                       className="text-sm font-normal text-gray-600 dark:text-gray-400 transition hover:text-gray-800 dark:hover:text-white"
                     >
                       {t("common.help", "Help")}
                     </Link>
                     <Link
-                      href="/privacy"
+                      href="#"
                       className="text-sm font-normal text-gray-600 dark:text-gray-400 transition hover:text-gray-800 dark:hover:text-white"
                     >
                       {t("common.privacy_policy", "Privacy Policy")}
