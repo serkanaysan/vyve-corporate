@@ -38,6 +38,8 @@
     "type_your_message": "Mesajınızı yazın"
   },
   "hero": {
-    "title": "Vyve ile çevrenizdeki yerleri keşfetmeye başlayın"
+    "title": "Sen hareket edersin. Şehir tepki verir.",
+    "description": "Şehrin her an değişen ritmini, gerçek zamanlı veriye dönüştürüyoruz.",
+    "button": "Şehirle buluşmaya az kaldı"
   }
 }

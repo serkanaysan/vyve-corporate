@@ -30,14 +30,14 @@ export default function Header() {
                 src="/images/logo.svg"
                 className="block dark:hidden"
                 alt="Vyve"
-                width={40}
+                width={30}
                 height={20}
               />
               <Image
                 src="/images/logo.svg"
                 className="hidden dark:block"
                 alt="Vyve"
-                width={40}
+                width={30}
                 height={20}
               />
               <span className={`${roboto.className} text-2xl font-semibold text-gray-900 dark:text-white/90 leading-none`}>Vyve</span>

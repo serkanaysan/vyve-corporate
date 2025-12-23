@@ -20,23 +20,20 @@ export default function HeroSection() {
               <h1 className="text-gray-700 mx-auto font-bold mb-4 text-4xl sm:text-[50px] dark:text-white/90 sm:leading-[64px] max-w-[700px]">
                 {/* Transform Ideas into Reality with Intelligent AI Tools */}
                 {t(
-                  "hero.title",
-                  "Start exploring the places around you with Vyve"
+                  "hero.description",
+                  "We turn the city’s ever\u2011changing rhythm into real\u2011time data."
                 )}
               </h1>
-              {/* <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
-                Unleash the Power of Artificial Intelligence to Streamline Your
-                Workflow, Boost Productivity, and Redefine Success.
-              </p> */}
+              <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
+                {t("hero.title", "You move. The city reacts.")}
+              </p>
 
               <div className="mt-9 flex sm:flex-row flex-col gap-3 relative z-30 items-center justify-center">
-                <Link
-                  href="#"
-                  className="bg-primary-500 transition h-12 inline-flex items-center justify-center hover:bg-primary-600 px-6 py-3 rounded-full text-white text-sm"
+                <div
+                  className="bg-primary-500 transition h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-white text-sm"
                 >
-                  Explore app
-                </Link>
-
+                  {t("hero.button", "Almost time to meet the city")}
+                </div>
                 {/* <IntroVideo /> */}
               </div>
             </div>

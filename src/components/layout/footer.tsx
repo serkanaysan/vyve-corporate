@@ -70,7 +70,7 @@ export default function Footer() {
                     src="/images/logo.svg"
                     alt="logo"
                     width={30}
-                    height={50}
+                    height={20}
                   />
                   <span
                     className={`${roboto.className} text-2xl font-semibold text-gray-900 dark:text-white/90 leading-none`}

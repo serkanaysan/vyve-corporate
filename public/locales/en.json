@@ -38,6 +38,8 @@
     "type_your_message": "Type your message"
   },
   "hero": {
-    "title": "Start exploring the places around you with Vyve"
+    "title": "You move. The city reacts.",
+    "description": "We turn the city’s ever\u2011changing rhythm into real\u2011time data.",
+    "button": "Almost time to meet the city"
   }
 }
