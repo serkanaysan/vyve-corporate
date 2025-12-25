@@ -21,9 +21,9 @@ export default function HeroSection() {
                   "We turn the city’s ever\u2011changing rhythm into real\u2011time data."
                 )}
               </h1>
-              <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
+              {/* <p className="max-w-[537px] text-center mx-auto dark:text-gray-400 text-gray-500 text-base">
                 {t("hero.title", "You move. The city reacts.")}
-              </p>
+              </p> */}
               <div className="mt-6 flex sm:flex-row flex-col gap-3 relative z-30 items-center justify-center">
                 <button className="rounded-full video-popup flex h-12 gap-3 items-center text-sm border bg-white dark:bg-white/10 dark:border-white/[0.05] dark:text-white border-gray-100 p-1.5 pr-6">
                   <span className="size-9 rounded-full gradient-bg-two inline-flex items-center justify-center text-sm font-medium">
@@ -56,7 +56,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="max-w-[1000px] mx-auto relative">
-            <div className="p-3 h-[300px] sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20p-3 sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20">
+            <div className="p-3 h-[320px] sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20p-3 sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20">
               <video
                 autoPlay
                 muted

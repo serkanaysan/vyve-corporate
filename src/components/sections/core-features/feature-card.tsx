@@ -37,8 +37,8 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
         src={feature.imageUrl}
         alt={title}
         role="presentation"
-        width={60}
-        height={100}
+        width={120}
+        height={200}
         style={{ fill: "#fff", borderRadius: 12 }}
       />
       {/* </div> */}
