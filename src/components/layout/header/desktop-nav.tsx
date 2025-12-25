@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-
 import { ChevronDown2Icon } from "@/icons/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -12,24 +11,42 @@ import { useI18n } from "@/app/providers/intl";
 
 export default function DesktopNav() {
   const pathname = usePathname();
+  const [hash, setHash] = useState("");
   const [activeDropdownKey, setActiveDropdownKey] = useState("");
   const { t } = useI18n();
 
   function toggleActiveDropdown(key: string) {
-    setActiveDropdownKey((prevKey) => (prevKey === key ? "" : key));
+    setActiveDropdownKey((prev) => (prev === key ? "" : key));
   }
 
+  // Hash değişimini takip et (#join_us gibi)
   useEffect(() => {
-    // Hide dropdown on pathname changes
+    const updateHash = () => {
+      setHash(window.location.hash);
+    };
+
+    updateHash(); // ilk render
+    window.addEventListener("hashchange", updateHash);
+
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
+
+  // Route değişince dropdown kapansın
+  useEffect(() => {
     setActiveDropdownKey("");
   }, [pathname]);
 
   return (
     <nav className="hidden lg:flex lg:items-center bg-[#F9FAFB] dark:bg-white/3 rounded-full p-1 max-h-fit">
-      {
-      // eslint-disable-next-line
-      navItems.map((item: any) => {
+      {navItems.map((item: any) => {
+        // ---------- NORMAL LINK ----------
         if (item.type === "link") {
+          const isActive =
+            pathname === item.href ||
+            (item.href.includes("#") &&
+              pathname === item.href.split("#")[0] &&
+              hash === `#${item.href.split("#")[1]}`);
+
           return (
             <Link
               key={item.href}
@@ -37,14 +54,12 @@ export default function DesktopNav() {
               className={cn(
                 "text-gray-500 dark:text-gray-400 text-sm px-4 py-1.5 rounded-full hover:text-primary-500 font-medium",
                 {
-                  "bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs":
-                    pathname === item.href,
+                  "bg-white dark:bg-white/5 text-gray-800 dark:text-white/90 shadow-xs":
+                    isActive,
                 }
               )}
             >
-              {
-              // eslint-disable-next-line
-              t(
+              {t(
                 (item as any).labelKey ?? (item.label as string),
                 String(item.label)
               )}
@@ -52,42 +67,40 @@ export default function DesktopNav() {
           );
         }
 
+        // ---------- DROPDOWN ----------
         if (item.type === "dropdown") {
-          const toggleThisDropdown = () => {
-            toggleActiveDropdown(item.label);
-          };
-
           const isDropdownActive = activeDropdownKey === item.label;
 
           return (
             <div key={item.label} className="relative">
               <button
-                onClick={toggleThisDropdown}
-                onMouseEnter={toggleThisDropdown}
-                onMouseLeave={toggleThisDropdown}
+                onClick={() => toggleActiveDropdown(item.label)}
+                onMouseEnter={() => toggleActiveDropdown(item.label)}
+                onMouseLeave={() => toggleActiveDropdown(item.label)}
                 onKeyDown={(e) => {
                   if (isDropdownActive && e.key === "Escape") {
-                    toggleThisDropdown();
+                    toggleActiveDropdown(item.label);
                   }
                 }}
                 className={cn(
                   "text-gray-500 dark:text-gray-400 hover:text-primary-500 group text-sm inline-flex gap-1 items-center px-4 py-1.5 font-medium rounded-full",
                   {
-                    "bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs":
-                      item.items.some((sub: any) =>
-                        pathname?.includes(sub.href)
-                      ),
+                    "bg-white dark:bg-white/5 text-gray-800 dark:text-white/90 shadow-xs":
+                      item.items.some((sub: any) => {
+                        if (sub.href.includes("#")) {
+                          const [path, subHash] = sub.href.split("#");
+                          return pathname === path && hash === `#${subHash}`;
+                        }
+                        return pathname === sub.href;
+                      }),
                   }
                 )}
               >
                 <span>
-                  {
-                    // eslint-disable-next-line
-                    t(
-                      (item as any).labelKey ?? (item.label as string),
-                      String(item.label)
-                    )
-                  }
+                  {t(
+                    (item as any).labelKey ?? (item.label as string),
+                    String(item.label)
+                  )}
                 </span>
                 <ChevronDown2Icon
                   className={cn("size-4 transition-transform duration-200", {
@@ -98,13 +111,8 @@ export default function DesktopNav() {
 
               {isDropdownActive && (
                 <div
-                  onMouseEnter={toggleThisDropdown}
-                  onMouseLeave={toggleThisDropdown}
-                  onKeyDown={(e) => {
-                    if (e.key === "Escape") {
-                      toggleThisDropdown();
-                    }
-                  }}
+                  onMouseEnter={() => toggleActiveDropdown(item.label)}
+                  onMouseLeave={() => toggleActiveDropdown(item.label)}
                   className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl shadow-theme-lg border border-gray-100 p-3 z-50"
                 >
                   <div className="space-y-1">

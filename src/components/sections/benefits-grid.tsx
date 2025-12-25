@@ -7,7 +7,7 @@ import React from "react";
 export default function BenefitsGrid() {
   const { t } = useI18n();
   return (
-    <section className="py-14 md:py-28">
+    <section id="join-us" className="py-14 md:py-28">
       <div className="wrapper">
         <div className="max-w-2xl mx-auto mb-12 text-center">
           <h2 className="max-w-lg mx-auto mb-3 font-bold text-center text-dark dark:text-white/90 text-3xl md:text-title-lg">
