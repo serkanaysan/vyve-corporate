@@ -101,5 +101,16 @@
       "question": "Vyve’yi nasıl kullanmaya başlayabilirim?",
       "answer": "Mobil uygulamadan Vyve’ye girerek şehrini seçebilir, mekânları görüntüleyebilir ve doluluk durumuna bakarak karar verebilirsin."
     }
+  },
+  "vendor": {
+    "title": "Mekânın Şehrin Ritmine Dahil Olsun",
+    "description": "Vyve’ye katıl, yoğunluğunu gerçek zamanlı olarak göster ve sana uygun misafirlerle doğru anda buluş.",
+    "title1": "Vyve’ye Katıl",
+    "description1": "Mekânını birkaç dakikada sisteme ekle, şehrin dijital akışında yerini al.",
+    "title2": "Gerçek Zamanlı Görünürlük",
+    "description2": "Anlık doluluk durumunu paylaş, sana uygun misafirler doğru zamanda seni bulsun.",
+    "title3": "Şehrin Akışına Uyum Sağla",
+    "description3": "Anlık hareketlere uyumlan, doğru zamanda doğru misafirlerle buluş.",
+    "try": "Şimdi ücretsiz dene"
   }
 }

@@ -94,7 +94,7 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section id="faq" className="py-14 md:py-28 dark:bg-[#171f2e]">
+    <section id="faq" className="py-14 md:py-28">
       <div className="wrapper">
         <div className="max-w-2xl mx-auto mb-12 text-center">
           <h2 className="mb-3 font-bold text-center text-gray-800 text-3xl dark:text-white/90 md:text-title-lg">
@@ -104,7 +104,7 @@ export default function FaqAccordion() {
             {t("faq.description", "Answered all frequently asked questions, Still confused? feel free contact with us")}
           </p>
         </div>
-        <div className="max-w-[600px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <div className="space-y-4">
             {faqItems.map((item) => (
               <FAQItem

@@ -101,5 +101,16 @@
       "question": "How can I start using Vyve?",
       "answer": "You can start using Vyve via the mobile app by selecting your city, viewing venues, and checking occupancy before making a decision."
     }
+  },
+  "vendor": {
+    "title": "Let Your Venue Join the City’s Rhythm",
+    "description": "Join Vyve, share your real-time busyness, and connect with the right guests at the right moment.",
+    "title1": "Join Vyve",
+    "description1": "Add your venue in minutes and take your place in the city’s digital flow.",
+    "title2": "Real-Time Visibility",
+    "description2": "Share your live occupancy and let the right guests find you at the right time.",
+    "title3": "Adapt to the City’s Flow",
+    "description3": "Respond to real-time movement and meet the right guests at the right moment.",
+    "try": "Try It for Free Now"
   }
 }

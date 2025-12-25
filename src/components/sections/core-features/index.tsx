@@ -3,7 +3,7 @@ import FeatureCard from './feature-card';
 
 export function CoreFeatures() {
   return (
-    <section className="py-30 bg-gray-50 dark:bg-white/1 px-5">
+    <section className="py-30 bg-gray-100 dark:bg-white/1 px-5">
       <div className="max-w-[72rem] mx-auto">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-bold text-gray-800 text-3xl dark:text-white/90 md:text-title-lg max-w-xl mx-auto">

@@ -6,6 +6,8 @@ export const CORE_FEATURES = [
       "Explore nearby cafés and see how busy they are in real time.",
     descriptionKey: "common.explorer_description",
     iconUrl: "/images/icons/explorer.svg",
+    imageUrl: "/images/app1.png",
+    imageLightUrl: "/images/app1-light.png",
   },
   {
     title: "Popular",
@@ -14,6 +16,9 @@ export const CORE_FEATURES = [
       "Check out the most liked and most visited places around you.",
     descriptionKey: "common.popular_description",
     iconUrl: "/images/icons/popular.svg",
+    imageUrl: "/images/app2.png",
+    imageLightUrl: "/images/app2-light.png",
+
   },
   {
     title: "Mood",
@@ -22,5 +27,8 @@ export const CORE_FEATURES = [
       "Find the right vibe based on how busy your area is right now.",
     descriptionKey: "common.mode_description",
     iconUrl: "/images/icons/vyve.svg",
+    imageUrl: "/images/app3.png",
+    imageLightUrl: "/images/app3-light.png",
+
   }
 ];
