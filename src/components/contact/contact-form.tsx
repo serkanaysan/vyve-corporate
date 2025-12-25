@@ -13,7 +13,7 @@ export default function ContactForm() {
       <div className="contact-wrapper border p-14 relative z-30 bg-white border-gray-100 dark:bg-dark-primary dark:border-gray-800">
         <div className="text-center mb-12">
           <h3 className="text-gray-800 font-bold dark:text-white text-3xl mb-2">
-            {t('contact.title', 'Get in Touch')}
+            {t('contact.title', 'Contact')}
           </h3>
         </div>
 
