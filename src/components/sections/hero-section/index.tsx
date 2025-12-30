@@ -56,13 +56,13 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="max-w-[1000px] mx-auto relative">
-            <div className="p-3 h-[320px] sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20p-3 sm:p-[18px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20">
+            <div className="h-[320px] sm:p-[4px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20p-3 sm:p-[4px] relative z-30 rounded-[32px] border border-white/30 dark:border-white/10 bg-white/20">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full rounded-2xl block h-full object-cover object-center"
+                className="w-full rounded-[28px] block h-full object-cover object-center"
               >
                 <source src="/videos/hero.mp4" type="video/mp4" />
               </video>
