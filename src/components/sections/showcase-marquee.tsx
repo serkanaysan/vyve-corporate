@@ -3,37 +3,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import "./showcase.css";
-import { useTheme } from "next-themes";
 
 const items = [
-  {
-    title: "Explorer",
-    image: {
-      dark: "/images/showcase/explorer-dark.png",
-      light: "/images/showcase/explorer-light.png",
-    },
-  },
-  {
-    title: "Project Two",
-    image: {
-      dark: "/images/showcase/explorer-dark.png",
-      light: "/images/showcase/explorer-light.png",
-    },
-  },
-  {
-    title: "Project Three",
-    image: {
-      dark: "/images/showcase/explorer-dark.png",
-      light: "/images/showcase/explorer-light.png",
-    },
-  },
-  {
-    title: "Project Four",
-    image: {
-      dark: "/images/showcase/explorer-dark.png",
-      light: "/images/showcase/explorer-light.png",
-    },
-  },
+  { title: "Project One", image: "https://picsum.photos/400/500?1" },
+  { title: "Project Two", image: "https://picsum.photos/400/500?2" },
+  { title: "Project Three", image: "https://picsum.photos/400/500?3" },
+  { title: "Project Four", image: "https://picsum.photos/400/500?4" },
 ];
 
 const CARD_WIDTH = 320;
@@ -80,17 +55,8 @@ export function ShowcaseMarquee() {
     }
   });
 
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
-    <section className={`scene ${theme}`}>
+    <section className="scene">
       <div className="viewport py-16">
         <div className="stage">
           <motion.div
@@ -117,7 +83,7 @@ export function ShowcaseMarquee() {
                   damping: 18,
                 }}
               >
-                {/* <div className="status-bar">
+                <div className="status-bar">
                   <span className="time">{time}</span>
 
                   <div className="status-icons">
@@ -131,12 +97,11 @@ export function ShowcaseMarquee() {
                     </span>
                   </div>
                 </div>
-                <div className="notch" /> */}
-                <img
-                  src={theme === "dark" ? item.image.dark : item.image.light}
-                  alt={item.title}
-                />
-                <div className="overlay">{/* <h3>{item.title}</h3> */}</div>
+                <div className="notch" />
+                <img src={item.image} alt={item.title} />
+                <div className="overlay">
+                  {/* <h3>{item.title}</h3> */}
+                </div>
               </motion.div>
             ))}
           </motion.div>
