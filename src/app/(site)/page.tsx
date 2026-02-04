@@ -1,5 +1,5 @@
 import HeroSection from "@/components/sections/hero-section";
-import { CoreFeatures } from "@/components/sections/core-features";
+// import { CoreFeatures } from "@/components/sections/core-features";
 import FaqAccordion from "@/components/sections/faq-accordion";
 import BenefitsGrid from "@/components/sections/benefits-grid";
 import { ShowcaseMarquee } from "@/components/sections/showcase-marquee";
@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
-      <CoreFeatures />
+      {/* <CoreFeatures /> */}
       <ShowcaseMarquee />
       {/* <ToolsTab /> */}
       <FaqAccordion />
