@@ -64,18 +64,31 @@ export function ShowcaseMarquee() {
             style={{
               x,
             }}
+            drag="x"
+            dragConstraints={{ left: -ITEM_SIZE * items.length, right: 0 }}
+            dragElastic={0.05}
+            onDragStart={() => (isPaused.current = true)}
+            onDragEnd={() => (isPaused.current = false)}
           >
             {[...items, ...items].map((item, i) => (
               <motion.div
                 key={i}
                 className="card"
-                onMouseEnter={() => (isPaused.current = true)}
-                onMouseLeave={() => (isPaused.current = false)}
+                onPointerEnter={() => (isPaused.current = true)}
+                onPointerLeave={() => (isPaused.current = false)}
+                onPointerDown={() => (isPaused.current = true)}
+                onPointerUp={() => (isPaused.current = false)}
                 whileHover={{
                   scale: 1.08,
                   rotateX: 0,
                   rotateY: 0,
                   z: 80,
+                }}
+                whileTap={{
+                  scale: 1.05,
+                  rotateX: 0,
+                  rotateY: 0,
+                  z: 40,
                 }}
                 transition={{
                   type: "spring",
@@ -99,9 +112,7 @@ export function ShowcaseMarquee() {
                 </div>
                 <div className="notch" />
                 <img src={item.image} alt={item.title} />
-                <div className="overlay">
-                  {/* <h3>{item.title}</h3> */}
-                </div>
+                <div className="overlay">{/* <h3>{item.title}</h3> */}</div>
               </motion.div>
             ))}
           </motion.div>

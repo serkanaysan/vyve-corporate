@@ -1,3 +1,9 @@
+:root {
+  --card-width: clamp(120px, 18vw, 200px);
+  --card-height: calc(var(--card-width) * 2.17);
+  --scene-height: calc(var(--card-height) * 1.38);
+}
+
 /* EKRANIN TAMAMI */
 .scene {
   width: 100%;
@@ -7,6 +13,7 @@
   align-items: flex-end;
   perspective: 1400px;
   overflow: hidden;
+  background: linear-gradient(0deg, rgba(152, 73, 208, 0) 0%, #9849d0 100%);
 }
 
 .scene::after {
@@ -42,15 +49,15 @@
 }
 
 .stage {
-  transform: perspective(1400px) rotateX(4deg) rotateY(16deg);
+  transform: perspective(800px) rotateX(0deg) rotateY(16deg);
   transform-origin: center center;
   transform-style: preserve-3d;
 }
 
 /* KART */
 .card {
-  width: 200px;
-  height: 434px;
+  width: var(--card-width);
+  height: var(--card-height);
   flex-shrink: 0;
   /* border-radius: 16px; */
   overflow: hidden;
@@ -109,7 +116,7 @@
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
+  width: 80px;
   height: 16px;
   background: #000;
   border-radius: 12px;
@@ -243,4 +250,9 @@
 
 .card:hover .status-bar {
   opacity: 1;
+}
+
+.scene,
+.viewport {
+  height: var(--scene-height);
 }
