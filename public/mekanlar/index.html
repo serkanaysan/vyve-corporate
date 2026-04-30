@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>POI Dashboard - Ultra Stable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial;
+        background: linear-gradient(97deg, #440670 0%, #c9a6ec 140.21%);
+        color: #fff;
+      }
+
+      .wrap {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        height: 100vh;
+      }
+
+      .panel {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+      }
+
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      .card {
+        margin-top: 15px;
+        padding: 12px;
+        background: #f7f7f7;
+        border-radius: 8px;
+        color: #000;
+      }
+
+      .big {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      #map {
+        height: 100vh;
+      }
+
+      .error {
+        margin-top: 10px;
+        color: red;
+        font-size: 12px;
+        white-space: pre-wrap;
+      }
+
+      /* 🔥 Toggle button */
+      #togglePanel {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 48px;
+        z-index: 1000;
+        background: #7b2cff;
+        color: #fff;
+        border: none;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 18px;
+        display: none;
+      }
+
+      /* 🔥 MOBILE */
+      @media (max-width: 768px) {
+        .wrap {
+          display: block;
+        }
+
+        #togglePanel {
+          display: block;
+        }
+
+        .panel {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 70%;
+          transform: translateY(100%);
+          border-radius: 20px 20px 0 0;
+          z-index: 999;
+        }
+
+        .panel.open {
+          transform: translateY(0);
+        }
+
+        #map {
+          height: 100vh;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          overflow-x: hidden;
+        }
+
+        select,
+        button {
+          max-width: 100%;
+        }
+
+        #map {
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 🔥 Toggle -->
+    <button id="togglePanel">☰</button>
+
+    <div class="wrap">
+      <div class="panel">
+        <div style="display: flex; gap: 8px; align-items: center">
+          <img
+            src="../images/vyve-logo-white.svg"
+            alt="logo"
+            style="height: 36px; display: block; margin-bottom: 14px"
+          />
+          <h2 style="color: #fff; margin: 0 0 8px 0">POI Dashboard</h2>
+        </div>
+
+        <select id="district">
+          <option value="Kadıköy">Kadıköy</option>
+          <option value="Beşiktaş">Beşiktaş</option>
+        </select>
+
+        <button onclick="loadData()">Veriyi Getir</button>
+
+        <div class="card">
+          Cafe
+          <div class="big" id="cafe">-</div>
+        </div>
+
+        <div class="card">
+          Restaurant
+          <div class="big" id="restaurant">-</div>
+        </div>
+
+        <div class="card">
+          Toplam
+          <div class="big" id="total">-</div>
+        </div>
+
+        <div id="error" class="error"></div>
+      </div>
+
+      <div id="map"></div>
+    </div>
+
+    <script>
+      const map = L.map("map").setView([41.01, 29.02], 12);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OSM",
+      }).addTo(map);
+
+      let layer = L.layerGroup().addTo(map);
+
+      const districts = {
+        Kadıköy: [40.95, 29.02, 41.02, 29.1],
+        Üsküdar: [41.0, 29.0, 41.06, 29.05],
+        Beşiktaş: [41.04, 29.0, 41.06, 29.02],
+        Şişli: [41.05, 28.97, 41.07, 29.02],
+        Fatih: [41.0, 28.93, 41.02, 28.97],
+      };
+
+      const ENDPOINTS = [
+        "https://overpass-api.de/api/interpreter",
+        "https://overpass.kumi.systems/api/interpreter",
+        "https://overpass.osm.ch/api/interpreter",
+      ];
+
+      function setError(msg) {
+        document.getElementById("error").innerText = msg;
+      }
+
+      async function fetchOverpass(query) {
+        let lastErr;
+
+        for (const url of ENDPOINTS) {
+          try {
+            const res = await fetch(url, {
+              method: "POST",
+              headers: { "Content-Type": "text/plain" },
+              body: query,
+            });
+
+            const text = await res.text();
+
+            if (!res.ok) throw new Error(text.slice(0, 200));
+            if (text.trim().startsWith("<"))
+              throw new Error("HTML/XML response");
+
+            return JSON.parse(text);
+          } catch (e) {
+            console.warn("Fail endpoint:", url);
+            lastErr = e;
+          }
+        }
+
+        throw lastErr;
+      }
+
+      function buildQuery(bbox) {
+        const [s, w, n, e] = bbox;
+
+        return `
+[out:json][timeout:25];
+node["amenity"~"cafe|restaurant"](${s},${w},${n},${e});
+out;
+`;
+      }
+
+      function count(elements) {
+        let cafe = 0;
+        let restaurant = 0;
+
+        elements.forEach((e) => {
+          const t = e.tags?.amenity;
+          if (t === "cafe") cafe++;
+          if (t === "restaurant") restaurant++;
+        });
+
+        return { cafe, restaurant, total: cafe + restaurant };
+      }
+
+      function draw(elements) {
+        layer.clearLayers();
+
+        elements.forEach((e) => {
+          if (!e.lat || !e.lon) return;
+
+          const type = e.tags?.amenity;
+
+          L.circleMarker([e.lat, e.lon], {
+            radius: 6,
+            color: type === "cafe" ? "green" : "red",
+          })
+            .bindPopup(type)
+            .addTo(layer);
+        });
+      }
+
+      async function loadData() {
+        setError("");
+
+        const d = document.getElementById("district").value;
+        const bbox = districts[d];
+
+        try {
+          const query = buildQuery(bbox);
+
+          const data = await fetchOverpass(query);
+          const elements = data.elements || [];
+
+          const c = count(elements);
+
+          document.getElementById("cafe").innerText = c.cafe;
+          document.getElementById("restaurant").innerText = c.restaurant;
+          document.getElementById("total").innerText = c.total;
+
+          draw(elements);
+
+          map.fitBounds([
+            [bbox[0], bbox[1]],
+            [bbox[2], bbox[3]],
+          ]);
+        } catch (err) {
+          setError(err.message);
+          console.error(err);
+        }
+      }
+
+      // 🔥 PANEL TOGGLE
+      const toggleBtn = document.getElementById("togglePanel");
+      const panel = document.querySelector(".panel");
+
+      toggleBtn.addEventListener("click", () => {
+        panel.classList.toggle("open");
+      });
+
+      loadData();
+    </script>
+  </body>
+</html>
